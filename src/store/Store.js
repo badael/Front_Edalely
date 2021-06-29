@@ -242,22 +242,32 @@ const store = createStore({
             console.log(res.data);
             return dispatch('attempt', res.data.access_token);
         },
-        async attempt({ commit }, token) {
+        async attempt({ commit, state }, token) {
+            if (token) {
+                commit('SET_TOKEN', token);
+            }
             console.log(token);
-            commit('SET_TOKEN', token);
-            //     // try {
-            //     // let res = await axios.get('auth/me');
-            //     //   let res = await axios.get("auth/me", {
-            //     //     headers: {
-            //     //       Authorization: "Bearer" + token,
-            //     //     },});
-            //     //     commit('SET_USER', res.data);
-            //     // } catch (e) {
-            //     //     commit('SET_TOKEN', null);
-            //     //     commit('SET_USER', null);
-            //     // }
+            if (!state.token) {
+                return;
+            }
+            // try {
+            // let res = await axios.get('auth/me');
+            //   let res = await axios.get("auth/me", {
+            //     headers: {
+            //       Authorization: "Bearer" + token,
+            //     },});
+            //     commit('SET_USER', res.data);
+            // } catch (e) {
+            //     commit('SET_TOKEN', null);
+            //     commit('SET_USER', null);
+            // }
         },
-
+        //     signOut ({commit}) {
+        //         return axios.post('auth/signout').then(() => {
+        //         commit('SET_TOKEN', null);
+        //             commit('SET_USER', null);
+        //              })
+        //     }
         //Register
         async register({ dispatch }, Credentials) {
             let res = await axios.post(

@@ -14,13 +14,14 @@ import 'normalize.css';
 import '../public/fontawesome-free-5.15.1-web/css/all.css';
 
 require('./store/subscriber');
+// store.dispatch('attempt', localStorage.getItem('token'));
 //  axios.defaults.headers['Accept-Language'] = lang;
 //  const string(lang) = localStorage.getItem('lang') || 'en';
 //  document.documentElement.lang = lang;
 axios.defaults.baseURL = 'http://edalili.e-dalely.com/public';
 
-const app = createApp(App).use(store).use(router, axios).use(i18n);
-
-app.config.globalProperties.axios = axios;
-
-app.mount('#app');
+store.dispatch('attempt', localStorage.getItem('token')).then(() => {
+    const app = createApp(App).use(store).use(router, axios).use(i18n);
+    app.config.globalProperties.axios = axios;
+    app.mount('#app');
+});
