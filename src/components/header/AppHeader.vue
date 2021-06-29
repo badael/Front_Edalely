@@ -879,6 +879,16 @@ export default {
             localStorage.setItem('lang', event.target.value);
             window.location.reload();
         },
+        // ...mapActions({
+        //     signOutActions:'signOut'
+        // })
+        // signOut(){ 
+        //     this.signOutActions().then(()=>{
+        //         this.$router.replace({
+        //             name:'home'
+        //         })
+        //     })
+        // }
     },
 
     //
