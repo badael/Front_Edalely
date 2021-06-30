@@ -1,12 +1,12 @@
 <template>
-    <AppHeader />
+    <AppHeader v-if="this.$route.path !== '/signin'" />
     <div id="app"></div>
     <router-view />
-    <AppFooter />
+    <AppFooter v-if="this.$route.path !== '/signin'" />
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import AppHeader from '@/components/header/AppHeader.vue'; // @ is an alias to /src
+import AppHeader from '@/components/header/AppHeader.vue'; // @ is an alias to /src authentication
 import AppFooter from '@/components/Footer/AppFooter.vue';
 @Options({
     components: {
