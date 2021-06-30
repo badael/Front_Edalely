@@ -3,7 +3,7 @@ import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/signin',
-        component: () => import('../components/Admin/Sign.vue'),
+        component: () => import('../components/Sign/Sign.vue'),
     },
     {
         path: '/visitStore/:id/:title',
@@ -123,56 +123,6 @@ const routes: Array<RouteRecordRaw> = [
         path: '/child',
         name: 'child',
         component: () => import('../views/categories/child.vue'),
-    },
-    /* dashboard */
-    {
-        path: '/admin',
-        name: 'admin',
-        component: () => import('../Dashboard/view/Admin.vue'),
-    },
-    {
-        path: '/admin/product_dash',
-        name: 'product_dash',
-        component: () => import('../Dashboard/view/product_dash.vue'),
-    },
-    //category dashboard//
-    {
-        path: '/categories_dash',
-        name: 'categories_dash',
-        component: () =>
-            import('../Dashboard/view/Category/categories_dash.vue'),
-    },
-    {
-        path: '/newCategory',
-        name: 'addnewcategory',
-        component: () =>
-            import('../Dashboard/view/Category/addNewCategory.vue'),
-    },
-    {
-        path: '/categoryview/:id',
-        name: 'categoryview',
-        component: () => import('../Dashboard/view/Category/categoryView.vue'),
-    },
-    {
-        path: '/categoryEdit/:id',
-        name: 'categoryEdit',
-        component: () => import('../Dashboard/view/Category/categoryEdit.vue'),
-    },
-    //
-    {
-        path: '/brand_dash',
-        name: 'brand_dash',
-        component: () => import('../Dashboard/view/brand_dash.vue'),
-    },
-    {
-        path: '/new_product',
-        name: 'new_product',
-        component: () => import('../Dashboard/view/new_product.vue'),
-    },
-    {
-        path: '/edit_product/:id',
-        name: 'edit_product',
-        component: () => import('../Dashboard/view/edit_product.vue'),
     },
     //restaurant
     {
