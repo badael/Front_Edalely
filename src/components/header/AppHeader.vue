@@ -76,7 +76,7 @@
                         >
                             <div>
                                 <router-link to="/addStore" class="link">{{
-                                    $t('AddPlatform')
+                                    $t('AddPlatform', { locale: lang })
                                 }}</router-link>
                             </div>
                             <div @click="gotocart()">
