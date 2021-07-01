@@ -303,7 +303,7 @@ const store = createStore({
         },
         //auth
         authenticated(state) {
-            return state.token;
+            return state.token && state.user;
             // return state.token && state.user;
         },
         user(state) {
