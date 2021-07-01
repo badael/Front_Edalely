@@ -63,15 +63,29 @@ const routes: Array<RouteRecordRaw> = [
         name: 'medic',
         component: () => import('../views/section/medic.vue'),
     },
+    //doctor
     {
         path: '/doctors',
         name: 'doctors',
         component: () => import('../views/section/doctors.vue'),
     },
     {
+        path: '/visit_doctor/:id/:first_name',
+        name: 'visitDoctor',
+        component: () =>
+            import('../components/body/doctors/visitDoctor.vue'),
+    },
+    //restaurant
+    {
         path: '/resturants',
         name: 'resturants',
         component: () => import('../views/section/resturants.vue'),
+    },
+    {
+        path: '/visit_restaurant/:id/:title',
+        name: 'visitRestaurant',
+        component: () =>
+            import('../components/body/restaurant/visitRestaurant.vue'),
     },
     {
         path: '/instrc',
@@ -124,13 +138,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'child',
         component: () => import('../views/categories/child.vue'),
     },
-    //restaurant
-    {
-        path: '/visit_restaurant/:id/:title',
-        name: 'visitRestaurant',
-        component: () =>
-            import('../components/body/restaurant/visitRestaurant.vue'),
-    },
+    
 ];
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
